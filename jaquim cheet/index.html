@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIRATATHEJOCA</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <style>
+    .toggle-btn {
+      position: absolute;
+      right: 0.5rem;
+      top: 50px;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toggle-btn img { width: 0.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <h2 class="piratathejoca">
+        <span> PIRATATHEJOCA </span>
+        <img src="./assets/piratathejoca.svg" alt="PIRATATHEJOCA" />
+      </h2>
+      <div class="form">
+        <div class="form-control">
+          <label for="ra">RA</label>
+          <input type="text" id="ra" name="ra" placeholder="Ex: 000111111sp" />
+          <button class="clear-btn" id="clear-ra" onclick="clearInput('ra')">
+            <img src="./assets/close.svg" alt="Limpar" />
+          </button>
+        </div>
+        <div class="form-control">
+          <label for="pwd">Senha</label>
+          <input type="password" id="pwd" name="pwd" placeholder="Digite sua senha" />
+          <button class="toggle-btn" id="toggle-pwd" onclick="togglePasswordVisibility()">
+            <img src="./assets/eye.svg" alt="Mostrar senha" />
+          </button>
+        </div>
+        <div class="form-buttons">
+          <button onclick="fazerlicaonormal()">Atividades Pendentes</button>
+          <button onclick="fazerlicaoatrasada()">Atividades Expiradas</button>
+        </div>
+      </div>
+      <div class="credits">
+        <span>Entre no nosso servidor do Discord</span>
+        <a href="https://discord.gg/platformdestroyer" class="discord">
+          <img src="./assets/discord.svg" alt="Discord" />
+          <span> Platform Discord </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="donationOverlay">
+    <div class="card">
+      <button class="close-button" onclick="closeOverlay()">
+        <img src="./assets/close.svg" alt="Close" />
+      </button>
+      <div class="card-body">
+        <h3 class="card-title">
+          Ajude o <br />
+          <span>PIRATATHEJOCA!</span>
+        </h3>
+        <p class="card-text">
+          Sua doação mantém nossa plataforma online e em funcionamento.
+        </p>
+        <p class="card-text">
+          Ajude o PIRATATHEJOCA a continuar gratuitamente e a permanecer vivo doando qualquer valor :D
+        </p>
+        <a href="https://pixgg.com/marcos10pc" class="donate-button" target="_blank">Doar</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/script.js" async defer></script>
+  <script>
+    function fazerlicaonormal() {
+      const name = document.getElementById('ra').value;
+      const password = document.getElementById('pwd').value;
+      // Função para verificar atividades pendentes
+      console.log('Atividades Pendentes:', name, password);
+    }
+
+    function fazerlicaoatrasada() {
+      const name = document.getElementById('ra').value;
+      const password = document.getElementById('pwd').value;
+      // Função para verificar atividades expiradas
+      console.log('Atividades Expiradas:', name, password);
+    }
+  </script>
+</body>
+</html>
